@@ -2,5 +2,13 @@ extends layout
 
 block contenido
     title=titulo
-    H1  Nuevo proyecto222
-    a(href="#") Enlace
+    .contenido-principal
+        h1 #{titulo}
+
+        form.agregar-proyecto(action="/nuevo_proyecto" method="POST")
+            .campo  
+                label(for="nombre") Nombre Proyecto:
+                input(type="text" id="nombre" name="nombre" placeholder="Introducir nombre proyecto")
+            .campo.enviar
+                input(type="submit" id="enviar" value= "agregar" name="enviar" class="boton")
+    

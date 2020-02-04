@@ -9,4 +9,6 @@ rutas.get('/', gralControl.principal);
 rutas.get('/nosotros', gralControl.nosotros);
 rutas.get('/nuevo_proyecto', gralControl.nuevo_proyecto);
 
+rutas.post('/nuevo_proyecto', gralControl.nuevo_proyecto_alta);
+
 module.exports = {rutas};  

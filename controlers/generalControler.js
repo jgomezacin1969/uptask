@@ -12,8 +12,10 @@ function nuevo_proyecto(req,res){
 };
 
 function nuevo_proyecto_alta(req,res){
-    let params = req.body;
-    res.status(200).json({mensaje:"formulario enviado"})
+    
+    console.log(req);
+    // res.status(200).json({mensaje:"formulario enviado"})
+    res.send("Formulario enviado");
 };
 
 module.exports = {principal,nosotros, nuevo_proyecto, nuevo_proyecto_alta};

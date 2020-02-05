@@ -11,16 +11,17 @@ app.use(express.static('public'));
 const port = 3000;
 
 
-// Ruta para el home
-app.use('/',rutas.rutas);
 
 // View engine = pug
 app.set('view enegine', 'pug');
 // Añadir carpeta de las vistas
-app.set('views', path.join(__dirname,'./views'));
+app.set('views', path.join(__dirname, './views'));
 
 //habilitar bodyParser para leer datos formulario
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Ruta para el home
+app.use('/', rutas.rutas);
 
 
 app.listen(port);

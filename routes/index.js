@@ -10,5 +10,6 @@ rutas.get('/nosotros', gralControl.nosotros);
 rutas.get('/nuevo_proyecto', gralControl.nuevo_proyecto);
 
 rutas.post('/nuevo_proyecto', gralControl.nuevo_proyecto_alta);
+rutas.post('/formulario', (req, res) => { res.status(200).json({ valor: req.body }); });
 
-module.exports = {rutas};  
+module.exports = { rutas };

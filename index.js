@@ -2,6 +2,14 @@ const express = require('express');
 const rutas = require('./routes/index');
 const path = require('path');
 const bodyParser = require("body-parser");
+const db = require('./config/db');
+
+db.authenticate()
+    .then(() => { console.log('BBDD activa'); })
+    .catch((error) => console.log('Error BBDD:', error));
+
+require('./models/Proyectos');
+db.sync();
 
 const app = express();
 
@@ -23,6 +31,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Ruta para el home
 app.use('/', rutas.rutas);
 
-
+// 
 app.listen(port);
 console.log('Servidor en PUERTO:' + port);

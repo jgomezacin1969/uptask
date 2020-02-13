@@ -12,7 +12,7 @@ function nuevo_proyecto(req, res) {
     res.render('nuevo_proyecto.pug', { titulo: 'Nuevo proyecto', variable01: 'Variable 01' });
 }
 
-function nuevo_proyecto_alta(req, res) {
+async function nuevo_proyecto_alta(req, res) {
     const { nombre } = req.body;
     // console.log(req.body);
     // res.status(200).json({mensaje:"formulario enviado"})
@@ -25,10 +25,8 @@ function nuevo_proyecto_alta(req, res) {
 
     } else {
 
-        Proyectos.create({ nombre })
-            .then(() => console.log('Insertado correctamente'))
-            .catch(error => console.log(error));
-        // res.status(200).json({ cuerpo: req.body, estado: "OK", parametros: req.params });
+        const proyecto = await Proyectos.create({ nombre });
+        res.redirect('/');
     }
 
 }

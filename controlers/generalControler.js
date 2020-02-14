@@ -32,4 +32,10 @@ async function nuevo_proyecto_alta(req, res) {
 
 }
 
-module.exports = { principal, nosotros, nuevo_proyecto, nuevo_proyecto_alta };
+async function all_proyecto(req, res) {
+    const proyectos = await Proyectos.findAll();
+    res.render('all_proyecto.pug', { nombrePagina: 'Todos Proyecto', proyectos });
+
+}
+
+module.exports = { principal, nosotros, nuevo_proyecto, nuevo_proyecto_alta, all_proyecto };

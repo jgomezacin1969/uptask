@@ -10,6 +10,7 @@ const { body } = require('express-validator/check');
 rutas.get('/', gralControl.principal);
 rutas.get('/nosotros', gralControl.nosotros);
 rutas.get('/nuevo_proyecto', gralControl.nuevo_proyecto);
+rutas.get('/all_proyecto', gralControl.all_proyecto);
 
 rutas.post('/nuevo_proyecto',
     body('nombre').not().isEmpty().trim().escape(),

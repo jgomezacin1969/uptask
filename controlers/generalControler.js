@@ -1,4 +1,5 @@
 const Proyectos = require('../models/Proyectos');
+const slug = require('slug');
 
 function principal(req, res) {
     res.render('principal.pug', { titulo: 'Pagina Principal', variable01: 'Variable 01' });

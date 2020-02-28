@@ -13,6 +13,11 @@ function nuevo_proyecto(req, res) {
     res.render('nuevo_proyecto.pug', { titulo: 'Nuevo proyecto', variable01: 'Variable 01' });
 }
 
+function detail_proyecto(req, res) {
+    let url = req.params.url;
+    res.status(200).json({ x1: url });
+}
+
 async function nuevo_proyecto_alta(req, res) {
     const { nombre } = req.body;
     // console.log(req.body);
@@ -38,4 +43,4 @@ async function all_proyecto(req, res) {
 
 }
 
-module.exports = { principal, nosotros, nuevo_proyecto, nuevo_proyecto_alta, all_proyecto };
+module.exports = { principal, nosotros, nuevo_proyecto, nuevo_proyecto_alta, all_proyecto, detail_proyecto };

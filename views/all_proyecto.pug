@@ -2,14 +2,15 @@ extends layout
 
 block contenido
     title=titulo
+    
     .contenido-principal
-        h1 #{titulo}
+        h1 #{nombrePagina} #{year}
 
         h2 LISTA DE PROYECTOS
         ul#proyectos.proyectos
             if(proyectos.length)
                 each proyecto in proyectos
                     li 
-                        a(href=`${proyecto.url}`)=proyecto.nombre
-                        
+                        a(href=`proyecto/${proyecto.url}`)=proyecto.nombre
+    pre=vardump(proyectos)                    
     
